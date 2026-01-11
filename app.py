@@ -28,7 +28,7 @@ def home():
         category=label_encoder.inverse_transform(cat_idx)[0]
 
         urgency_value=detect_urgency(ticket_text)
-        urgency="urgency=" if urgency_value == 1 else "normal"
+        urgency="urgent" if urgency_value == 1 else "normal"
 
         priority=assign_priority(category,urgency_value)
         department=route_department(category)
