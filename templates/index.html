@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Support Ticket Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+<div class="container">
+    <h2>Customer Support Ticket Classification</h2>
+
+    <form method="POST">
+        <label for="ticket">Enter Ticket Message</label>
+        <textarea id="ticket" name="ticket" required>{{ ticket }}</textarea>
+
+        <button type="submit">Classify Ticket</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p><span class="label">Category:</span> {{ result.category }}</p>
+        <p><span class="label">Urgency:</span> {{ result.urgency }}</p>
+        <p><span class="label">Priority:</span> {{ result.priority }}</p>
+        <p><span class="label">Department:</span> {{ result.department }}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
