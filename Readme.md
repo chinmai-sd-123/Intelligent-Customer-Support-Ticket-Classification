@@ -77,7 +77,7 @@ Multiple classical ML models were evaluated:
 
 This logic is intentionally kept outside the ML model for transparency and maintainability.
 
-- **Urgency Detection**: Rule-based detection using phrases like "urgent", "asap", "immediately", "need this resolved today".
+- **Urgency Detection**: Rule-based detection using phrases like "urgent","normal".
 - **Priority Assignment**:
     - Urgent tickets → **High**
     - Payment / Account issues → **Medium**
@@ -86,24 +86,6 @@ This logic is intentionally kept outside the ML model for transparency and maint
     - Payment / Refund → **Finance**
     - Technical → **Technical Support**
     - Account / Other → **Customer Support**
-
-## 8. Application Architecture
-
-```mermaid
-graph TD
-    A[User Input] --> B[Text Cleaning]
-    B --> C[TF-IDF (word + char)]
-    C --> D[ML Category Prediction]
-    D --> E[Urgency Detection]
-    E --> F[Priority Assignment]
-    F --> G[Department Routing]
-    G --> H[JSON / UI Response]
-```
-
-## 9. API Usage
-
-### Endpoint
-`POST /predict`
 
 ### Request Body
 ```json
