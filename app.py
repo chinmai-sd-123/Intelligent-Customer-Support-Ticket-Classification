@@ -72,7 +72,7 @@ def predict():
 
     #4.urgency
     urgency_value=detect_urgency(ticket)
-    urgency="urgent" if urgency_value== 1 else "normal"
+    urgency="urgent" if urgency_value==1 else "normal"
 
     #5. priority
     priority=assign_priority(category,urgency)
